@@ -1,2 +1,0 @@
-# megaverse-challenge
-Coding challenge
