@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+/**
+ * This is a custom hook to handle the resulting data, error, and loading state
+ */
 export const useService = <TResponse, T extends () => Promise<TResponse>>(
   fn: T
 ) => {
