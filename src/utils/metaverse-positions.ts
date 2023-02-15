@@ -2,9 +2,10 @@ import { Cometh } from "../models/Cometh";
 import { MegaverseObjectType } from "../models/MegaverseObjectType";
 import { Polyanet } from "../models/Polyanet";
 import { Soloon } from "../models/Soloon";
+
 const candidateId = import.meta.env.VITE_CANDIDATE_ID;
 
-export const getPositions = (megaverse: any) => {
+export const parseMegaverseObjects = (megaverse: any) => {
     const megaverseObjects: MegaverseObjectType[] = [];
 
     for (let i = 0; i < megaverse.goal.length; i++) {

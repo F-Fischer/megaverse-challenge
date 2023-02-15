@@ -1,17 +1,14 @@
 const apiUrl = import.meta.env.VITE_API_URL;
 const candidateId = import.meta.env.VITE_CANDIDATE_ID;
-import axios from 'axios';
+import { Polyanet } from '../models/Polyanet';
+import { client } from './Client';
 
 /**
  * Create a new polyanet with the given position in the megaverse
  */
-export const createPolyanet = async (row: number, column: number) => {
+export const createPolyanet = async (polyanet: Polyanet) => {
     const response =
-        await axios.post(`${apiUrl}/polyanets`, {
-            row,
-            column,
-            candidateId,
-        },{
+        await client.post(`${apiUrl}/polyanets`, polyanet,{
             headers: {
                 'Access-Control-Allow-Origin': '*',
             }
@@ -25,7 +22,7 @@ export const createPolyanet = async (row: number, column: number) => {
  */
 export const deletePolyanet = async (row: number, column: number) => {
     const response =
-        await axios.delete(`${apiUrl}/polyanets`, {
+        await client.delete(`${apiUrl}/polyanets`, {
             data: {
                 column,
                 row,
