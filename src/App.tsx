@@ -5,7 +5,14 @@ import {
 } from 'react-query'
 import Megaverse from './components/Megaverse';
 
-const queryClient = new QueryClient()
+// This will be the client that will be used for all queries
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function App() {
 

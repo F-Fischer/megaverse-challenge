@@ -6,11 +6,7 @@ import { client } from "./Client";
  */
 export const createSoloon = async (soloon: Soloon) => {
     const response =
-        await client.post(`/soloons`, soloon, {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-            }
-        });
+        await client.post(`/soloons`, soloon, {});
     const json = await response.data;
     return json;
 };

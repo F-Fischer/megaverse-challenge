@@ -6,12 +6,8 @@ import { client } from "./Client";
  */
 export const createCometh = async (cometh: Cometh) => {
     const response =
-        await client.post(`/comeths`, cometh, {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-            }
-        });
-    const json = await response.data;
+        await client.post(`/comeths`, cometh, {});
+    const json = response.data;
     return json;
 };
 

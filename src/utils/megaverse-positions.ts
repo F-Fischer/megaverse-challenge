@@ -5,6 +5,10 @@ import { Soloon } from "../models/Soloon";
 
 const candidateId = import.meta.env.VITE_CANDIDATE_ID;
 
+/**
+ * This function parses the response from the API and returns an array of
+ * megaverse objects with their given attributes.
+ */
 export const parseMegaverseObjects = (megaverse: any) => {
     const megaverseObjects: MegaverseObjectType[] = [];
 

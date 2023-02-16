@@ -6,11 +6,7 @@ const candidateId = import.meta.env.VITE_CANDIDATE_ID;
  * Gets the megaverse goal map result
  */
 export const getMegaverse = async () => {
-    const response = await client.get(`/map/${candidateId}/goal`,{
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-        }
-    });
-    const json = await response.data;
+    const response = await client.get(`/map/${candidateId}/goal`,{});
+    const json = response.data;
     return json;
 };

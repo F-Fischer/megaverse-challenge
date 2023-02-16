@@ -8,11 +8,7 @@ import { client } from './Client';
  */
 export const createPolyanet = async (polyanet: Polyanet) => {
     const response =
-        await client.post(`${apiUrl}/polyanets`, polyanet,{
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-            }
-        });
+        await client.post(`${apiUrl}/polyanets`, polyanet,{});
     const json = await response.data;
     return json;
 };
@@ -20,14 +16,10 @@ export const createPolyanet = async (polyanet: Polyanet) => {
 /**
  * Delete polyanet with the given position in the megaverse
  */
-export const deletePolyanet = async (row: number, column: number) => {
+export const deletePolyanet = async (polyanet: Polyanet) => {
     const response =
         await client.delete(`${apiUrl}/polyanets`, {
-            data: {
-                column,
-                row,
-                candidateId,
-            }
+            data: polyanet
         });
     const json = await response.data;
     return json;
